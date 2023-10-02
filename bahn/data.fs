@@ -75,7 +75,9 @@ let createTablesScript = (*lang=sql*)
   CREATE TABLE IF NOT EXISTS stop_times (
     trip_id TEXT,
     arrival_time TEXT,
+    arrival_time_seconds INTEGER,
     departure_time TEXT,
+    departure_time_seconds INTEGER,
     stop_id TEXT,
     stop_sequence INTEGER,
     stop_headsign TEXT,
@@ -294,7 +296,9 @@ let saveStop (stop: Stop) (connection: SqliteConnection) =
 type StopTime =
     { tripId: string
       arrivalTime: string option
+      arrivalTimeSeconds: uint64 option
       departureTime: string option
+      departureTimeSeconds: uint64 option
       stopId: string
       stopSequence: uint
       stopHeadsign: string option
@@ -312,7 +316,9 @@ let insertStopTimeQuery =
     VALUES (
         :trip_id,
         :arrival_time,
+        :arrival_time_seconds,
         :departure_time,
+        :departure_time_seconds,
         :stop_id,
         :stop_sequence,
         :stop_headsign,
@@ -331,7 +337,9 @@ let saveStopTime (stopTime: StopTime) (connection: SqliteConnection) =
         command.Parameters
         |> add ":trip_id" stopTime.tripId
         |> addOption ":arrival_time" stopTime.arrivalTime
+        |> addOption ":arrival_time_seconds" stopTime.arrivalTimeSeconds
         |> addOption ":departure_time" stopTime.departureTime
+        |> addOption ":departure_time_seconds" stopTime.departureTimeSeconds
         |> add ":stop_id" stopTime.stopId
         |> add ":stop_sequence" stopTime.stopSequence
         |> addOption ":stop_headsign" stopTime.stopHeadsign

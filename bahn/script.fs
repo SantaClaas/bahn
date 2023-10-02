@@ -40,20 +40,20 @@ type LocationType =
 // }
 
 
-let getPath name =
-    Path.Combine(__SOURCE_DIRECTORY__, "GTFS_VRS_mit_SPNV", $"{name}.txt")
-
-let stops = Stops.Load(getPath "stops").Cache()
-let trips = Trips.Load(getPath "trips").Cache()
-let routes = Routes.Load(getPath "routes").Cache()
-let shapes = Shapes.Load(getPath "shapes").Cache()
-let stopTimes = StopTimes.Load(getPath "stop_times").Cache()
-
-
-
-let trip = trips.Rows |> Seq.head
-
-printfn $"Trip {trip.Trip_id}  '{trip.Trip_headsign}'"
+// let getPath name =
+//     Path.Combine(__SOURCE_DIRECTORY__, "GTFS_VRS_mit_SPNV", $"{name}.txt")
+//
+// let stops = Stops.Load(getPath "stops").Cache()
+// let trips = Trips.Load(getPath "trips").Cache()
+// let routes = Routes.Load(getPath "routes").Cache()
+// let shapes = Shapes.Load(getPath "shapes").Cache()
+// let stopTimes = StopTimes.Load(getPath "stop_times").Cache()
+//
+//
+//
+// let trip = trips.Rows |> Seq.head
+//
+// printfn $"Trip {trip.Trip_id}  '{trip.Trip_headsign}'"
 //
 // let tripStopTimes =
 //     stopTimes.Rows

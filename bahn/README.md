@@ -9,3 +9,7 @@ This project uses GTFS Data provided by [Verkehrsverbund Rhein-Sieg GmbH](https:
 ## Reference
 
 - [General Transit Feed Specification (GTFS)](https://gtfs.org/)
+## Interesting Finds
+- (Paper) [Round-Based Public Transit Routing (RAPTOR)](https://www.microsoft.com/en-us/research/publication/round-based-public-transit-routing/) through this [StackExchange Question](https://cs.stackexchange.com/questions/83759/routing-algorithm-for-train-network)
+- (Video) [Jonas Sauer - Journey planning in public transit networks](https://youtu.be/AdArDN4E6Hg?t=2880)
+- (Repository) [Raptor Journey Planner](https://github.com/planarnetwork/raptor)

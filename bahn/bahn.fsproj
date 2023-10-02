@@ -9,26 +9,14 @@
         <Compile Include="csv.fs" />
         <Compile Include="script.fs" />
         <Compile Include="data.fs" />
+        <Compile Include="raptor.fs" />
         <Compile Include="Program.fs"/>
-        <Content Include="GTFS_VRS_mit_SPNV\routes.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\calendar.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\stops.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\feed_info.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\trips.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\shapes.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\frequencies.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\stop_times.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\calendar_dates.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\agency.txt" />
-        <Content Include="GTFS_VRS_mit_SPNV\transfers.txt" />
         <Content Include="README.md" />
-        <Content Include="trip_sample.csv" />
-        <Content Include="GTFS_VRS_mit_SPNV.zip" />
-        <Content Include="database.db" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="FSharp.Data" Version="6.3.0" />
+      <PackageReference Include="Fumble" Version="1.0.1" />
       <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
       <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.11" />
     </ItemGroup>
