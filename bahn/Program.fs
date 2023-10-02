@@ -10,6 +10,7 @@ open FSharp.Data.CsvExtensions
 open Microsoft.Data.Sqlite
 open Microsoft.FSharp.Collections
 open Microsoft.FSharp.Core
+open bahn
 open bahn.data
 
 
@@ -226,24 +227,8 @@ open Fumble
 [<EntryPoint>]
 let main _ =
     // createDatabase().Wait()
-
-    let path = Path.Combine(__SOURCE_DIRECTORY__, "./database.db")
-
-    let builder = SqliteConnectionStringBuilder(ForeignKeys = true, DataSource = path)
     
+    raptor.NaiveRaptor.test()
 
-
-    let result =
-        Sql.connect builder.ConnectionString
-        |> Sql.query "SELECT * FROM agencies"
-        |> Sql.execute (fun read ->
-            let agencyId = read.string "id"
-            printfn $"heya {agencyId}")
-
-    match result with
-    | Ok resultValue ->
-        printfn $"Nice {resultValue}"
-        
-    | Error errorValue -> 
-        printfn $"Not Nice {errorValue}"
+  
     0
